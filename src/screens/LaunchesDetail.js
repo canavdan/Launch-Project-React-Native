@@ -7,12 +7,23 @@ import { connect } from 'react-redux'
 import LaunchInformation from '../components/LaunchInformation'
 import LaunchMissions from '../components/LaunchMissions'
 import RocketImage from '../components/RocketImage'
+import { favStatus, favLaunch } from '../actions'
 
 class LaunchesDetail extends Component {   
   // eslint-disable-next-line no-useless-constructor
   constructor(props) {
       super(props)
     }
+
+   componentDidMount() {
+      // this.props.favStatus()
+       //const fav = this.props.launch.isFav
+   }
+   changeFavStatus(launch) {
+    //const favStatu = this.props.launch.isFav
+    //this.props.favLaunch(this.props.navigation.state.launch, uid, favStatu)
+    console.log(launch);  
+   }
   render() {
    const { params } = this.props.navigation.state
    const launch = params.launch
@@ -38,7 +49,9 @@ class LaunchesDetail extends Component {
            <LaunchInformation {...launch} />
           </Tab>
           <Tab heading="Missions" activeTabStyle={styles.backGroundPurp} tabStyle={styles.backGroundPurp}>
-            <LaunchMissions {...launch} />
+            <LaunchMissions {...launch} favStatus={this.props.launch.isFav} 
+             onClick={() => { this.changeFavStatus(...launch) }} 
+            />
           </Tab>
           
         </Tabs>
@@ -63,5 +76,7 @@ const styles = StyleSheet.create({
   }
 })
 
-const mapStateToProps = () => ({})
-export default connect(mapStateToProps, {})(LaunchesDetail)
+const mapStateToProps = state => ({
+  launch: state.launch
+})
+export default connect(mapStateToProps, { favStatus, favLaunch })(LaunchesDetail)

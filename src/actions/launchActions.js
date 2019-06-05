@@ -5,7 +5,7 @@ import {
     FAV_LAUNCHES,
     GET_FAV_STATUS
   } from './types'
-
+  import firebaseService from '../components/enviroments/firebase'
   
   export const fetchLaunchesRequest = () => ({
     type: FETCHING_LAUNCHES_REQUEST
@@ -26,13 +26,17 @@ import {
     payload: fav
   })
   
-  export const favLaunch = (launch) => async dispatch => {
+  export const favLaunch = (launch, uid, isFav) => async dispatch => {
     dispatch(favLaunches())
-    const response = await fetch(launch)
+    firebaseService.database().ref('favs').push({
+      launchId: launch.id,
+      userId: uid,
+      isFav: !isFav
+    })
   }
 
   export const favStatus = () => (dispatch) => {
-      firebase.database().ref('favs').on('value', (snapshot) => { 
+    firebaseService.database().ref('favs').on('value', (snapshot) => { 
         const favs = snapshot.val()     
           dispatch(getFavStatus(favs))
       }, (error) => { console.log(error) })

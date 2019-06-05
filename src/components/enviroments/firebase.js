@@ -28,3 +28,4 @@ const firebaseConfig = {
   
   const firebaseService = new FirebaseService().app
   export default firebaseService
+  

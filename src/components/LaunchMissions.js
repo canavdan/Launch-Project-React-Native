@@ -1,8 +1,8 @@
 import React, { } from 'react'
 import { StyleSheet } from 'react-native'
-import { Card, CardItem, Text, Container, Content } from 'native-base'
+import { Card, CardItem, Text, Container, Content, Icon, Right } from 'native-base'
 
-const LaunchMissions = ({ missionsName, typeName, status }) => (
+const LaunchMissions = ({ missionsName, typeName, status }, favStatus, onClick) => (
 <Container>
       <Content>
              <Card>                       
@@ -13,7 +13,17 @@ const LaunchMissions = ({ missionsName, typeName, status }) => (
                   <Text>{missionsName}</Text>                     
             </CardItem>   
             <CardItem>                                            
-                  <Text style={styles.nameText}>TYPE</Text>                     
+                  <Text style={styles.nameText}>TYPE</Text> 
+                   <Right>
+                         {favStatus ? (
+                         <Icon name="star" onPress={onClick}
+                         style={{ fontSize: 50, color: 'black' }}
+                         />) : (
+                         <Icon name="star" onPress={onClick}
+                         style={{ fontSize: 50, color: '#d5d400' }}
+                         />) }
+                         
+                   </Right>                    
             </CardItem>
             <CardItem>                                            
                   <Text>{typeName}</Text>                     

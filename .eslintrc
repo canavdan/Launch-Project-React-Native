@@ -1,0 +1,17 @@
+{
+    "extends":"eslint-config-rallycoding",
+    "settings": {
+        "eslint.autoFixOnSave": true,
+        "eslint.alwaysShowStatus": true,
+        "prettier.eslintIntegration": true,
+        "javascript.validate.enable": false
+ },
+    "rules": {
+        "no-undef":"off",
+        "max-len":"off",
+        "react/jsx-first-prop-new-line":"off",
+        "global-require":"off",
+        "semi":"off"
+    }
+    }
+    

@@ -1,13 +1,16 @@
-import { FETCHING_LAUNCHES_FAILURE,
- FETCHING_LAUNCHES_REQUEST, FETCHING_LAUNCHES_SUCCESS, GET_FAV_STATUS,
- FAV_LAUNCHES } from '../actions/types'
-
+import {
+  FETCHING_LAUNCHES_FAILURE,
+  FETCHING_LAUNCHES_REQUEST,
+  FETCHING_LAUNCHES_SUCCESS,
+  GET_FAV_STATUS,
+  FAV_LAUNCHES,
+} from '../actions/types'
 
 const initialState = {
   isLoading: false,
   launches: [],
   errorMessage: '',
-  isFav: false
+  isFav: false,
 }
 
 const launchReduer = (state = initialState, action) => {

@@ -8,7 +8,7 @@ export default class Logo extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image source={logoImg} style={styles.image} resizeMode="stretch" />        
+        <Image source={logoImg} style={styles.image} resizeMode="stretch" />
       </View>
     )
   }

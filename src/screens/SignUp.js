@@ -45,16 +45,13 @@ class SignUp extends Component {
               <Logo /> 
               <KeyboardAvoidingView behavior="padding">             
                 <Form style={styles.form}> 
-                <Item
-                    rounded
-                >                   
+                <Item>                   
                  <Input placeholder="Name" value={this.state.name}                                  
                     onChangeText={(text) => { this.setState({ name: text }) }}
                  />
                   </Item>
 
                   <Item
-                    rounded
                     style={styles.textBox}
                   >                   
                     <Input placeholder="Surname" value={this.state.surname}                                  
@@ -63,7 +60,6 @@ class SignUp extends Component {
                   </Item>
 
                   <Item
-                    rounded
                     style={styles.textBox}
                   >                   
                     <Input placeholder="E-mail" value={this.state.email}                                  
@@ -72,7 +68,6 @@ class SignUp extends Component {
                   </Item>
 
                   <Item                    
-                    rounded
                     style={styles.textBox}
                   >                 
                      <Input placeholder="Password"
@@ -83,7 +78,7 @@ class SignUp extends Component {
                      />
                   </Item>
 
-                  <Button block rounded danger style={styles.loginButton} onPress={this.onCreateAccountPress} >               
+                  <Button block danger style={styles.loginButton} onPress={this.onCreateAccountPress} >               
                     <Text style={{ color: 'white' }}>SIGN UP</Text>
                   </Button>
                    

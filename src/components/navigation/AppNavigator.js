@@ -19,7 +19,7 @@ const AppNavigator = createStackNavigator({
     }
   },
   {
-    initialRouteName: 'Launches',
+    initialRouteName: 'SignIn',
     headerMode: 'none',
     headerStyle: {        
         backgroundColor: 'transparent'      

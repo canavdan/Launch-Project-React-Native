@@ -35,16 +35,14 @@ class SignIn extends Component {
               <Logo /> 
               <KeyboardAvoidingView behavior="padding">             
                 <Form style={styles.form}> 
-                  <Item
-                   rounded             
-                  >                                      
+                  <Item>                                      
                     <Input placeholder="E-mail" value={this.state.email}                                  
                     onChangeText={(text) => { this.setState({ email: text }) }}
                     />
                   </Item>
 
                   <Item                    
-                    rounded                 
+                                     
                     style={styles.password}                                      
                   >                                   
                     <Input placeholder="Password"
@@ -55,7 +53,7 @@ class SignIn extends Component {
                     />
                   </Item>
 
-                  <Button block rounded danger style={styles.loginButton} onPress={this.onLoginPress} >             
+                  <Button block danger style={styles.loginButton} onPress={this.onLoginPress} >             
                     <Text style={{ color: 'white' }}>LOG IN</Text>
                   </Button>
                                  

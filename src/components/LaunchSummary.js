@@ -21,12 +21,20 @@ const LaunchSummary = (props) => (
                   <Text style={styles.nameText}>{ props.launch.name}</Text>                     
             </CardItem>
             <CardItem>                                            
-                  <Text>{ props.launch.windowsStart}</Text>                     
+                  <Text>{
+                     props.launch.windowsStart ? convertToGmtPlusThree(props.launch.windowsStart)
+                     :
+                    TBD
+                    } </Text>                     
             </CardItem>          
           </Card>
        )
   
-
+  const convertToGmtPlusThree = (inputDateTime) => {
+    const date = new Date(inputDateTime);
+    date.setHours(date.getHours() + 3);
+    return date.toGMTString()
+  }                  
   const styles = StyleSheet.create({
     image: {
       flex: 1,

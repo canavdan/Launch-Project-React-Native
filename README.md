@@ -1,6 +1,10 @@
 # Launch-Project-React-Native
 A launch information project. React Native , Redux , Native-Base, Firebase, React Navigation.
-In this project , you can view launch list(taken from launchlibrary.net), you can register and login.Also you can add any launch your     favorite launch list. 
+In this project :
+- You can view launch list(taken from launchlibrary.net), 
+- You can view mission list(taken from launchlibrary.net), 
+- You can register and login.
+- Also you can add any launch your favorite launch list. 
 
 <img width="35%" src="https://github.com/canavdan/Launch-Project-React-Native/blob/master/pics/Screenshot_1559812106.png?raw=true"/>
 <img width="35%" src="https://github.com/canavdan/Launch-Project-React-Native/blob/master/pics/Screenshot_1559812149.png?raw=true"/>
